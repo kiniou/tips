@@ -13,6 +13,8 @@ Debian-based distributions.
 
 ### wildcard *.docker.localhost
 
+💡 *This minimal configuration is handy to target Traefik containers by their generated hostnames.*
+
 In `/etc/unbound/unbound.conf.d/docker.localhost.conf` :
 
 ```
