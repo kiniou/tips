@@ -13,7 +13,8 @@ Debian-based distributions.
 
 ### wildcard *.docker.localhost
 
-💡 *This minimal configuration is handy to target Traefik containers by their generated hostnames.*
+💡 *This minimal configuration is handy to target Traefik containers by their
+generated hostnames.*
 
 In `/etc/unbound/unbound.conf.d/docker.localhost.conf` :
 
@@ -37,7 +38,7 @@ $ curl -s "http://localhost:8080/api" | \
 ### states order matters :
 
 In top.sls (or included sls within a state), the order of states will be
-processed in the declared order.
+processed in the declared order :
 
 ```sls
  - "role:webserver":
