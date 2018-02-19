@@ -79,3 +79,5 @@ USER:100000:65536
 
 Replace USER with your `user` login and `<docker_group>` with GID of docker
 (usefull in order to allow some container to access `docker.socket`)
+
+Restart your docker daemon and you will see future bind mounted volumes owned by your user 😜.
