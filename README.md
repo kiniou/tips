@@ -51,3 +51,31 @@ The webserver role will apply its states in the following order:
 1. apache.sls
 2. php-fpm.sls
 3. other_packages.sls
+
+
+## Docker
+
+### fix bind mounts permissions with `userns-remap`
+
+`/etc/docker/daemon.json`
+```json
+{
+  "userns-remap": "USER"
+}
+```
+
+`/etc/subuid`
+```
+USER:1000:1
+USER:100000:65536
+```
+
+
+`/etc/subgid`
+```
+USER:<docker_group>:1
+USER:100000:65536
+```
+
+Replace USER with your `user` login and `<docker_group>` with GID of docker
+(usefull in order to allow some container to access `docker.socket`)
