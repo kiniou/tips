@@ -81,3 +81,14 @@ Replace USER with your `user` login and `<docker_group>` with GID of docker
 (usefull in order to allow some container to access `docker.socket`)
 
 Restart your docker daemon and you will see future bind mounted volumes owned by your user 😜.
+
+
+## SSH
+
+### Proxy HTTP(S) to remote host via SOCKS5
+
+```
+ssh -D localhost:8080 <user>@<remote-host>
+```
+
+Then setup your browser's proxy extension with a SOCK5 proxy pointing at localhost:8080
