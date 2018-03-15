@@ -92,3 +92,16 @@ ssh -D localhost:8080 <user>@<remote-host>
 ```
 
 Then setup your browser's proxy extension with a SOCK5 proxy pointing at localhost:8080
+
+
+## SystemD
+
+### Completely override ExecStart service with drop-in configuration
+
+Put an `override.conf` file in the corresponding `<service>.d` (eg. `/etc/systemd/user/amazing.service.d`):
+
+```
+[Service]
+ExecStart=
+ExecStart=/bin/true
+```
