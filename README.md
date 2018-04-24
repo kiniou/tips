@@ -105,3 +105,10 @@ Put an `override.conf` file in the corresponding `<service>.d` (eg. `/etc/system
 ExecStart=
 ExecStart=/bin/true
 ```
+
+## .env (dotenv)
+
+### Load .env in shell
+```shell
+export $(grep -Ev '^#' ./.env | xargs );
+```
