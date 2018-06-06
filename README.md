@@ -55,6 +55,19 @@ The webserver role will apply its states in the following order:
 
 ## Docker
 
+### Cleanup images and containers
+
+1. Remove containers that are not running anymore:
+```shell
+docker ps -q -a -f=status={created,exited,dead} | xargs --no-run-if-empty docker rm
+```
+
+2. Remove unused images
+```shell
+docker images -f=dangling=true -q | xargs --no-run-if-empty docker rmi
+```
+
+
 ### fix bind mounts permissions with `userns-remap`
 
 `/etc/docker/daemon.json`
