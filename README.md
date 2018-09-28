@@ -1,5 +1,18 @@
 # Tips and tricks 👌
 
+## Git
+
+### empty directory (`.gitignore` + `.gitkeep` combo)
+
+Add (before the `!` line) any empty directories you want to commit which contains a .gitkeep files.
+
+Exemple: keep a `data` directory in your repo
+```
+/data/*
+!/**/.gitkeep
+```
+
+
 ## Linux
 
 ## Dbus error when calling `systemctl --user`
