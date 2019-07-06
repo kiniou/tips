@@ -138,3 +138,13 @@ ExecStart=/bin/true
 ```shell
 export $(grep -Ev '^#' ./.env | xargs );
 ```
+
+## Rsync
+
+### get changes in dry-run
+
+_every time, I forget about the `-i, --itemize-changes` option …_
+```shell
+$ rsync -n -i -aP <source> <destination>
+```
+
