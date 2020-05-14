@@ -17,3 +17,9 @@ cat >>/tmp/vagrant.log<<EOF
 $(date) '${dir_name}' '${name}' '$*'
 EOF
 ```
+
+### Check start date of commands
+
+```shell
+ps -C <cmd> -o pid,ppid,command,lstart
+```
